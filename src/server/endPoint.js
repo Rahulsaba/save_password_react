@@ -6,9 +6,9 @@ export const api = {
   socialmedia: {
     getAll: () => axiosClient?.get("api/createmedia"),
     // getById: (id) => axiosClient.get(`/users/${id}`),
-     create: (data) =>  axiosClient.post("api/createmedia", data),
+     create: (data) =>  axiosClient.post("https://password-node.vercel.app/api/createmedia", data),
     // update: (id, data) => axiosClient.put(`/users/${id}`, data),
-    delete: (id) => axiosClient.delete(`api/deletemedia/${id}`),
+    delete: (id) => axiosClient.delete(`https://password-node.vercel.app/api/deletemedia/${id}`),
   },
 
   // Post endpoints

@@ -35,7 +35,8 @@ export default function CreateForm() {
     })
     const { mutateAsync: createMediaData, isPending } = useCreateSocialMedia()
     const { mutateAsync: deleteMediaData } = useDeleteSocialMedia()
-    const { data: getMediaData, error ,isLoading} = useGetSocialMedia()
+    const { data: getMediaData, error, isLoading } = useGetSocialMedia()
+    console.log(getMediaData, 'getMediaData');
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -62,7 +63,6 @@ export default function CreateForm() {
                 password: "",
             })
         }
-
     }
 
     if (isLoading) return <div className="text-center">Loading...</div>
@@ -154,10 +154,10 @@ export default function CreateForm() {
                                         onClick={() => handleDelete(item?.id)}
                                         disabled={deletingId === item?.id}
                                     >
-                                      < Pencil />
+                                        < Pencil />
                                     </Button>
                                 </TableCell>
-                             
+
                             </TableRow>
                         ))}
                     </TableBody>
