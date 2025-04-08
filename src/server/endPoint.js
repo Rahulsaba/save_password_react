@@ -4,7 +4,7 @@ import axiosClient from "./axios-client"
 export const api = {
   // User endpoints
   socialmedia: {
-    getAll: () => axiosClient?.get("api/createmedia"),
+    getAll: () => axiosClient?.get("https://password-node.vercel.app/api/createmedia"),
     // getById: (id) => axiosClient.get(`/users/${id}`),
      create: (data) =>  axiosClient.post("https://password-node.vercel.app/api/createmedia", data),
     // update: (id, data) => axiosClient.put(`/users/${id}`, data),
