@@ -10,7 +10,7 @@ export const useCreateSocialMedia = () => {
       return response?.data
     },
     onSuccess: () => {
-      // Invalidate and refetch users list
+            // Invalidate and refetch users list
       queryClient.invalidateQueries({ queryKey: ["createsocialmedia"] })
     },
   })
@@ -21,7 +21,7 @@ export const useDeleteSocialMedia = () => {
     mutationFn: async (id) => {
       const response = await api?.socialmedia?.delete(id)
       console.log(response, 'response');
-      // return response?.data
+       return response?.data
     },
     onSuccess: () => {
       // Invalidate and refetch users list
@@ -36,10 +36,11 @@ export const useGetSocialMedia = () => {
     queryKey: ["createsocialmedia"],
     queryFn: async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/createmedia`);
-        const data = await response.json(); // ✅ Only here
-        console.log(data, 'get_social_responsedata'); // ✅ Then log
-        return data ?? [];
+        const response = await  api?.socialmedia?.getAll()
+        // fetch(`http://localhost:5000/api/createmedia`);
+         // ✅ Only here
+      
+        return response.data ?? [];
       } catch (error) {
         console.log(error, 'error');
         return []; // ✅ Always return something

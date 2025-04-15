@@ -25,6 +25,7 @@ import { Delete, LoaderCircle } from 'lucide-react';
 
 import { useCreateSocialMedia, useDeleteSocialMedia, useGetSocialMedia } from "@/hooks/socialmediahook"
 import { Pencil } from "lucide-react"
+
 export default function CreateForm() {
 
     const [open, setOpen] = React.useState(false)
@@ -37,6 +38,8 @@ export default function CreateForm() {
     const { mutateAsync: deleteMediaData } = useDeleteSocialMedia()
     const { data: getMediaData, error, isLoading } = useGetSocialMedia()
     console.log(getMediaData, 'getMediaData');
+
+
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -70,6 +73,7 @@ export default function CreateForm() {
     return (
         <>
             {/* className="flex justify-center  h-dvh flex-col gap-4 w-1/2 mx-auto "> */}
+      
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                     <Button variant="outline" className={'!text-white'}>Create </Button>
